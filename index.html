@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+</nav>
+
+    <h1>DUMIDU TECHNIC</h1>
+<p>powerd by dumidu udipana</p>
+
+<h2></h2>
+<img src="image.jpg" alt="My Image" width="300">"
+
+<h2>MY YOUTUBE VIDEO</h2>
+<h3>pones</h3>
+
+<!-- Video 1 -->
+<iframe width="300" height="170" 
+src="https://www.youtube.com/embed/wNdRrahsF7I" 
+title="Video 1" frameborder="0" allowfullscreen></iframe>
+
+<br><br>
+
+<!-- Video 2 -->
+<iframe width="300" height="170" 
+src="https://www.youtube.com/embed/x81HwlCd8TY" 
+title="Video 2" frameborder="0" allowfullscreen></iframe>
+
+<br><br>
+
+<!-- Video 3 -->
+<iframe width="300" height="170" 
+src="https://www.youtube.com/embed/PXPP3i-TXWw" 
+title="Video 3" frameborder="0" allowfullscreen></iframe>
+
+<h3>Facebook</h3>
+
+<!-- Video 1 -->
+<iframe width="300" height="170" 
+src="https://www.youtube.com/embed/y2HK4D6Z8rU?" 
+title="Video 1" frameborder="0" allowfullscreen></iframe>
+
+<br><br>
+
+<!-- Video 2 -->
+<iframe width="300" height="170" 
+src="https://www.youtube.com/embed/VIDEO_ID_2" 
+title="Video 2" frameborder="0" allowfullscreen></iframe>
+
+<br><br>
+
+<!-- Video 3 -->
+<iframe width="300" height="170" 
+src="https://www.youtube.com/embed/VIDEO_ID_3" 
+title="Video 3" frameborder="0" allowfullscreen></iframe>
+
+<div class="videos">
+    <iframe src="..."></iframe>
+    <iframe src="..."></iframe>
+    <iframe src="..."></iframe>
+</div>
+
+<!-- Floating Chat Button -->
+<div id="chat-icon" onclick="toggleChat()" style="position:fixed; bottom:20px; right:20px; background:#0d6efd; color:white; width:50px; height:50px; border-radius:50%; display:flex; justify-content:center; align-items:center; cursor:pointer; font-size:24px; box-shadow: 0px 4px 6px rgba(0,0,0,0.3);">
+    💬
+</div>
+
+<!-- Hidden Chat Box -->
+<div id="chat-box" style="display:none; position:fixed; bottom:80px; right:20px; width:300px; max-height:400px; border-radius:10px; overflow:auto; background:white; box-shadow:0 4px 8px rgba(0,0,0,0.2); padding:10px; font-family:Arial;">
+    <div id="chat-content" style="height:300px; overflow:auto;"></div>
+    <input type="text" id="user-msg" placeholder="Type a message" style="width:calc(100% - 50px); padding:5px;">
+    <button onclick="sendMessage()" style="width:40px;">➤</button>
+</div>
+
+<script>
+    function toggleChat() {
+        let chatBox = document.getElementById("chat-box");
+        chatBox.style.display = chatBox.style.display === "none" ? "block" : "none";
+    }
+    
+    function sendMessage() {
+        let input = document.getElementById("user-msg");
+        let msg = input.value.trim();
+        if (msg !== "") {
+            let chatContent = document.getElementById("chat-content");
+            // User message
+            chatContent.innerHTML += "<p style='color:blue;'><strong>You:</strong> " + msg + "</p>";
+            
+            // Simple bot reply logic
+            let reply = "I didn't understand that.";
+            if (msg.toLowerCase().includes("hi")) reply = "Hi there! How are you?";
+            if (msg.toLowerCase().includes("how are you")) reply = "I'm just a bot, but doing fine!";
+            if (msg.toLowerCase().includes("bye")) reply = "Goodbye! See you later!";
+            
+            chatContent.innerHTML += "<p style='color:green;'><strong>Bot:</strong> " + reply + "</p>";
+            
+            chatContent.scrollTop = chatContent.scrollHeight;
+            input.value = "";
+        }
+    }
+</script>
+
+</body>
+</html>
